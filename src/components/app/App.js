@@ -1,10 +1,11 @@
 
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error404 from '../error404/Error404';
 import Home from '../../pages/home/Home';
+import ArrayEmployee from '../../pages/arrayEmployee/ArrayEmployee';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <Header />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/employees-list' element={<ArrayEmployee />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         <Footer />
