@@ -12,7 +12,7 @@ const Header = () => (
                 <h1 className='nav__title'>HRnet</h1>
                 <div className='header__nav__right'>
                     <NavLink to='/home' className={({ isActive }) => 
-                            (isActive ? "Link__active" : "Link" )}>HRnet</NavLink>
+                            (isActive ? "Link__active" : "Link" )}>Add employees</NavLink>
                     <NavLink to='/employees-list' className={({ isActive }) => 
                             (isActive ? "Link__active" : "Link" )}>Employees list</NavLink>
                 </div>
