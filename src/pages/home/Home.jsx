@@ -1,6 +1,9 @@
 import './Home.css'
+import dataStates from '../../data/dataStates';
+import dataDepartements from '../../data/dataDepartements';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
+
 
 
 const Home = () => {
@@ -25,6 +28,7 @@ const Home = () => {
         state: Yup.string()
             .required('This field is required'),
         zipCode: Yup.number()
+            .test('len', 'Must be exactly 5 characters', val => val.toString().length === 5)
             .required('This field is required'),
         departement: Yup.string()
             .required('This field is required'),
@@ -37,12 +41,10 @@ const Home = () => {
         startDate: "",
         street: "",
         city: "",
-        state: "Alabama",
+        state: "Select a state...",
         zipCode: "",
-        departement: "Sales",
+        departement: "Select a departement...",
     }
-
-
 
 
 
@@ -80,7 +82,7 @@ const Home = () => {
                     </div>
                     
                     <fieldset className='form__address'>
-                        <legend>Address</legend>
+                        <legend>Address:</legend>
 
                         <div  className='form__div'>
                             <label htmlFor='street'>Street</label>
@@ -95,9 +97,12 @@ const Home = () => {
                         </div>
 
                         <div  className='form__div'>
-                            <label htmlFor='state'>City</label>
-                            <Field name='state' as='select' className='from__select' />
-                                <option></option>
+                            <label htmlFor='state'>State</label>
+                            <Field name='state' as='select' className='from__select'>                              
+                                {dataStates.map((option, index) => (
+                                    <option value={option.abbreviation} key={index}>{option.name}</option>
+                                ))}
+                            </Field>
                             <ErrorMessage name='state' component='span' className='form__error' />
                         </div>
 
@@ -111,8 +116,11 @@ const Home = () => {
 
                     <div  className='form__div'>
                         <label htmlFor='departement'>Departement</label>
-                        <Field name='departement' as='select' className='from__select' />
-                            <option></option>
+                        <Field name='departement' as='select' className='from__select'>
+                            {dataDepartements.map((option) => (
+                                <option value={option.value} key={option.key}>{option.label}</option>
+                            ))}
+                        </Field>
                         <ErrorMessage name='departement' component='span' className='form__error' />
                     </div>
 
