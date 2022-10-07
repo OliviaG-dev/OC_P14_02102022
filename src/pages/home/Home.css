@@ -1,4 +1,65 @@
 .home {
-    width: 100vw;
-    height:30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__container {
+    border: 2px solid var(--tertio-color);
+    width: 30%;
+    padding: 1rem;
+}
+
+.form__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form__div input{
+    width: 15rem;
+    height: 2.1rem;
+    border: 2px solid var(--tertio-color);
+    margin-bottom: 0.5rem;
+}
+
+.form__div input:active {
+    border-color: var(--main-color);
+}
+
+.form__div select{
+    width: 15rem;
+    height: 2.1rem;
+    border: 2px solid var(--tertio-color);
+}
+
+.form__error {
+    color: rgb(203, 10, 10);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.home__text {
+    font-weight: 800;
+    padding: 2rem;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.form__address {
+    border: 1px solid var(--tertio-color);
+    margin: 1rem;
+    padding: 1rem;
+    text-align: left;
+}
+
+.form__address  legend {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--main-color) 0%, var(--tertio-color) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
