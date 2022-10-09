@@ -2,7 +2,7 @@ import './Error404.css'
 
 const Error404 = () => (
     <div className="erreur404">
-        <p className="error404__text">Error404</p>
+        <h2 className="error404__text">Error404</h2>
     </div>
 );
 

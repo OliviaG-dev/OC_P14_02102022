@@ -22,8 +22,12 @@ const Home = () => {
         startDate: Yup.date()
             .required('This field is required'),
         street: Yup.string()
+            .min(4, 'Too small')
+            .max(25, 'Too long')
             .required('This field is required'),
         city: Yup.string()
+            .min(3, 'Too small')
+            .max(10, 'Too long')
             .required('This field is required'),
         state: Yup.string()
             .required('This field is required'),

@@ -1,0 +1,15 @@
+.erreur404 {
+    height: 35rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error404__text{
+    font-size: 5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, var(--main-color) 0%, var(--tertio-color) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
