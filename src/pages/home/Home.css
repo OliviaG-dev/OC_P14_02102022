@@ -6,7 +6,7 @@
 }
 
 .home__container {
-    border: 2px solid var(--tertio-color);
+    border: 3px solid var(--tertio-color);
     width: 30%;
     padding: 1rem;
 }
@@ -24,6 +24,7 @@
     height: 2.1rem;
     border: 2px solid var(--tertio-color);
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .form__div input:active {
@@ -34,6 +35,8 @@
     width: 15rem;
     height: 2.1rem;
     border: 2px solid var(--tertio-color);
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .form__error {
@@ -62,4 +65,40 @@
     background: linear-gradient(to right, var(--main-color) 0%, var(--tertio-color) 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.from__button {
+    background: var(--main-color);
+    border: 1px solid var(--tertio-color);
+    border-radius: 0.37rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1rem;
+    height:2.5rem;
+    width: 8rem;
+    outline: 0;
+    padding: 0.75rem 0.87rem;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.from__button:hover,
+.from__button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: var(--tertio-color);
+}
+
+.from__button:active {
+    opacity: .5;
 }
