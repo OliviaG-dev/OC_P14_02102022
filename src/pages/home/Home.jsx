@@ -1,12 +1,22 @@
 import './Home.css'
+import { useState } from 'react';
 import dataStates from '../../data/dataStates';
 import dataDepartements from '../../data/dataDepartements';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
+import { createEmployee } from '../../redux/features/employee';
+import { useDispatch } from 'react-redux';
 
 
 
 const Home = () => {
+    const [isShow, setIsShow] = useState(false)
+    const dispatch = useDispatch();
+
+    
+    const closeModal = () =>{
+        setIsShow(!isShow)
+    }
     
     const validationSchema = Yup.object().shape({
         firstName: Yup.string()
@@ -31,8 +41,11 @@ const Home = () => {
             .required('This field is required'),
         state: Yup.string()
             .required('This field is required'),
-        zipCode: Yup.number()
-            .test('len', 'Must be exactly 5 characters', val => val.toString().length === 5)
+        zipCode: Yup.string()
+            // .test('len', 'Must be exactly 5 characters', val => val.toString().length === 5)
+            .matches(/^[0-9]+$/, "Must be only digits")
+            .min(5, 'Must be exactly 5 digits')
+            .max(5, 'Must be exactly 5 digits')
             .required('This field is required'),
         departement: Yup.string()
             .required('This field is required'),
@@ -51,13 +64,29 @@ const Home = () => {
     }
 
 
-
     return (
     <main className='home'>
         <h2 className='home__text'>Create employee</h2>
         <div className='home__container'>
             <Formik initialValues={initialValues}
                     validationSchema={validationSchema} 
+                    onSubmit={(values, {setSubmitting, resetForm}) => {
+                    console.log(values)
+                    dispatch(createEmployee(values))
+                    setSubmitting(false)
+                    resetForm({
+                        firstName:"",
+                        lastName:"",
+                        birth:"",
+                        startDate:"",
+                        street:"",
+                        city:"",
+                        state:"",
+                        zipCode:"",
+                        departement:"",
+                    })
+                    setIsShow(true)
+                    }}
                     >
                 <Form className='home__form'>
 
@@ -122,7 +151,7 @@ const Home = () => {
                         <label htmlFor='departement'>Departement</label>
                         <Field name='departement' as='select' className='from__select'>
                             {dataDepartements.map((option) => (
-                                <option value={option.value} key={option.key}>{option.label}</option>
+                                <option value={option.value} key={option.id}>{option.label}</option>
                             ))}
                         </Field>
                         <ErrorMessage name='departement' component='span' className='form__error' />
