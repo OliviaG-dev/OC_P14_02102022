@@ -1,11 +1,12 @@
 import './Home.css'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import dataStates from '../../data/dataStates';
 import dataDepartements from '../../data/dataDepartements';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import { createEmployee } from '../../redux/features/employee';
 import { useDispatch } from 'react-redux';
+import { Modal } from '@oliviag-dev/simple-npm-modal-react';
 
 
 
@@ -161,6 +162,7 @@ const Home = () => {
 
                 </Form>
             </Formik>
+            {isShow ? <Modal text='Employee add !' closeModal={(e) => closeModal()} /> : null}
 
         </div>
     </main>
