@@ -178,7 +178,7 @@ tr:nth-child(2n) {
 }
 
 .table__nav__list__button:hover {
-    background-color: rgba(17, 16, 16, 0.171);
+    background-color: #94ad1819;
 }
 
 .table__nav__list__icon--right {
