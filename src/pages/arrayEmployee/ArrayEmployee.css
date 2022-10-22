@@ -134,6 +134,10 @@
     justify-content: center;
 }
 
+tr:nth-child(2n) {
+    background-color: #94ad1819;
+}
+
 /*******************************TABLE NAV**************************************/
 .table__nav {
     width: 75%;
