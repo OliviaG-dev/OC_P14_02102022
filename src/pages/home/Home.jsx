@@ -1,7 +1,7 @@
 import './Home.css'
 import React, { useState } from 'react';
 import dataStates from '../../data/dataStates';
-import dataDepartements from '../../data/dataDepartements';
+import dataDepartments from '../../data/dataDepartments';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import { createEmployee } from '../../redux/features/employee';
@@ -84,7 +84,7 @@ const Home = () => {
                         city:"",
                         state:"",
                         zipCode:"",
-                        departement:"",
+                        department:"",
                     })
                     setIsShow(true)
                     }}
@@ -151,7 +151,7 @@ const Home = () => {
                     <div  className='form__div'>
                         <label htmlFor='department'>Department</label>
                         <Field name='department' as='select' className='from__select'>
-                            {dataDepartements.map((option) => (
+                            {dataDepartments.map((option) => (
                                 <option value={option.value} key={option.id}>{option.label}</option>
                             ))}
                         </Field>

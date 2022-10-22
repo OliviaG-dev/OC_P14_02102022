@@ -111,28 +111,28 @@ const ArrayEmployee = () => {
 
         <table className='table__content'>
             <thead className='table__content__container'>
-            
-                <tr className='table__content__tr'>
-                    {columns.map((column, idx) => (
-                        <th key={'colum-'+idx} className='table__content__label'>
-                            <button className='table__content__button'
-                                    onClick={() => changeStateColumn(column.data)}
-                            >
-                                {column.title}
-                                <div>
-                                    {column.state === '' && <FontAwesomeIcon icon={faBars} className='table__content__icon' /> }
-                                    {column.state === 'asc' && <FontAwesomeIcon icon={faArrowUp} className='table__content__icon' />}
-                                    {column.state === 'desc' && <FontAwesomeIcon icon={faArrowDown} className='table__content__icon' />}
-                                </div>
-                            </button>
-                        </th>
+                <tbody>
+                    <tr className='table__content__tr'>
+                        {columns.map((column, idx) => (
+                            <th key={'colum-'+idx} className='table__content__label'>
+                                <button className='table__content__button'
+                                        onClick={() => changeStateColumn(column.data)}
+                                >
+                                    {column.title}
+                                    <div>
+                                        {column.state === '' && <FontAwesomeIcon icon={faBars} className='table__content__icon' /> }
+                                        {column.state === 'asc' && <FontAwesomeIcon icon={faArrowUp} className='table__content__icon' />}
+                                        {column.state === 'desc' && <FontAwesomeIcon icon={faArrowDown} className='table__content__icon' />}
+                                    </div>
+                                </button>
+                            </th>
                     ))}
-                </tr>
-            
+                    </tr>
+                </tbody>
             </thead>
             <tbody className='table__content__body'>
                 {displayData().slice(indexStart, indexStart + employeesPerTable).map((row, idx) => (
-                    <tr key={'user-'+idx} classname=''>
+                    <tr key={'user-'+idx}>
                         <td className='table__content__td'>{row.firstName}</td>
                         <td className='table__content__td'>{row.lastName}</td>
                         <td className='table__content__td'>{row.startDate}</td>
