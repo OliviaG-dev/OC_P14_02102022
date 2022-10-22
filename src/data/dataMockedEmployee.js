@@ -6,9 +6,9 @@ const employeesMocked = [
         startDate: '20/06/2022',
         department: 'Marketing',
         dateOfBirth: '18/11/1989',
-        street: '103 rue saults',
+        street: '103r saults',
         city: 'Danub',
-        State: 'AS',
+        state: 'AS',
         zipCode: '20369'
     },
     {
@@ -18,9 +18,9 @@ const employeesMocked = [
         startDate: '20/04/2022',
         department: 'Sales',
         dateOfBirth: '18/11/1987',
-        street: '10 avenue Orean',
+        street: '10 av Orean',
         city: 'New-york',
-        State: 'AR',
+        state: 'AR',
         zipCode: '15986'
     },
     {
@@ -30,9 +30,9 @@ const employeesMocked = [
         startDate: '03/09/2022',
         department: 'Human Resources',
         dateOfBirth: '23/12/1975',
-        street: 'route de la charité',
+        street: '6r de la charité',
         city: 'Los Angeles',
-        State: 'CT',
+        state: 'CT',
         zipCode: '47320'
     },
     {
@@ -42,9 +42,9 @@ const employeesMocked = [
         startDate: '09/11/2021',
         department: 'Sales',
         dateOfBirth: '23/02/1995',
-        street: '3 rue de la republique',
+        street: '3r republique',
         city: 'Houston',
-        State: 'MD',
+        state: 'MD',
         zipCode: '67200'
     },
 ];
