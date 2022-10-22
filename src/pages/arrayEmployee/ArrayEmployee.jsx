@@ -130,7 +130,7 @@ const ArrayEmployee = () => {
             </thead>
             <tbody className='table__content__body'>
                 {displayData().slice(indexStart, indexStart + employeesPerTable).map((row, idx) => (
-                    <tr key={'user-'+idx}>
+                    <tr key={'user-'+idx} className='table__content__tr'>
                         <td className='table__content__td'>{row.firstName}</td>
                         <td className='table__content__td'>{row.lastName}</td>
                         <td className='table__content__td'>{row.startDate}</td>
