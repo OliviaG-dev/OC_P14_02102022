@@ -48,7 +48,7 @@ const Home = () => {
             .min(5, 'Must be exactly 5 digits')
             .max(5, 'Must be exactly 5 digits')
             .required('This field is required'),
-        departement: Yup.string()
+        department: Yup.string()
             .required('This field is required'),
     })
     
@@ -61,7 +61,7 @@ const Home = () => {
         city: "",
         state: "Select a state...",
         zipCode: "",
-        departement: "Select a departement...",
+        department: "Select a department...",
     }
 
 
