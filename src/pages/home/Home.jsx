@@ -149,13 +149,13 @@ const Home = () => {
                     </fieldset>
 
                     <div  className='form__div'>
-                        <label htmlFor='departement'>Departement</label>
-                        <Field name='departement' as='select' className='from__select'>
+                        <label htmlFor='department'>Department</label>
+                        <Field name='department' as='select' className='from__select'>
                             {dataDepartements.map((option) => (
                                 <option value={option.value} key={option.id}>{option.label}</option>
                             ))}
                         </Field>
-                        <ErrorMessage name='departement' component='span' className='form__error' />
+                        <ErrorMessage name='department' component='span' className='form__error' />
                     </div>
 
                     <button type='submit' className='from__button'>Save</button>
