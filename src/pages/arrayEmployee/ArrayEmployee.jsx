@@ -111,7 +111,6 @@ const ArrayEmployee = () => {
 
         <table className='table__content'>
             <thead className='table__content__container'>
-                <tbody>
                     <tr className='table__content__tr'>
                         {columns.map((column, idx) => (
                             <th key={'colum-'+idx} className='table__content__label'>
@@ -128,7 +127,6 @@ const ArrayEmployee = () => {
                             </th>
                     ))}
                     </tr>
-                </tbody>
             </thead>
             <tbody className='table__content__body'>
                 {displayData().slice(indexStart, indexStart + employeesPerTable).map((row, idx) => (
