@@ -7,7 +7,7 @@ const Header = () => (
         <div className='header__container'>
             <nav className='header__nav'>
                 <div className='header__nav__left'>
-                    <img className='nav__logo' src={Logo} alt='logo' />
+                    <img className='nav__logo' src={Logo} alt='logo' width="128" height="128"/>
                 </div>
                 <h1 className='nav__title'>HRnet</h1>
                 <div className='header__nav__right'>

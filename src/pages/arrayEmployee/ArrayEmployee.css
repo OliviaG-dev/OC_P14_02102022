@@ -38,7 +38,7 @@
     justify-content: space-around;
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
     align-items: center;
 }
 
@@ -56,7 +56,7 @@
 .table__header__search {
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
     align-items: center;
     display: flex;
 
@@ -150,7 +150,7 @@ tr:nth-child(2n) {
 .table__nav__text {
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
     display: flex;
     width: 10rem;
     justify-content: space-between;
@@ -194,7 +194,7 @@ tr:nth-child(2n) {
 .table__nav__list__text {
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
 }
 
 /***************************Responsive********************/
