@@ -19,6 +19,7 @@ const Home = () => {
         setIsShow(!isShow)
     }
     
+    //configure errors
     const validationSchema = Yup.object().shape({
         firstName: Yup.string()
             .min(4, 'Too small')

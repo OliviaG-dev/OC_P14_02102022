@@ -90,6 +90,8 @@ const ArrayEmployee = () => {
         <h1 className='table__title'>Current Employees</h1>
         <NavLink to='/' className="table__link">Return Home</NavLink>
         <div className='table__header'>
+
+            {/* select number entries */}
             <div className='table__header__entries'>
                 <span>Show</span>
                 <select className='table__header__select' onChange={handleChangeEmployeesPerTable}>
@@ -100,7 +102,8 @@ const ArrayEmployee = () => {
                 </select>
                 <span>entries</span>
             </div>
-    
+            
+            {/* searchbar */}
             <div className='table__header__search'>
                 <label htmlFor='table-search' >Search</label>
                 <input type='text' id='table-search' className='header__search__input' placeholder='Search...' onChange={(e) => setSearchData(e.target.value)} />
@@ -109,7 +112,9 @@ const ArrayEmployee = () => {
             </div>
         </div>
 
+        {/*table */}
         <table className='table__content'>
+        
             <thead className='table__content__container'>
                     <tr className='table__content__tr'>
                         {columns.map((column, idx) => (
@@ -144,12 +149,16 @@ const ArrayEmployee = () => {
                 ))}
             </tbody>
         </table>
+
         <nav className='table__nav' aria-label='table navigation'>
+            {/*Show number employees*/}
             <span className='table__nav__text'>Showing
             <span >{Number(indexStart+1)} - {Number(indexStart + employeesPerTable) < displayData().length ? Number(indexStart + employeesPerTable) : displayData().length}</span>
             of
             <span >{displayData().length}</span>
             </span>
+
+            {/*Show number page*/}
             <ul className='table__nav__list'>
                 <li>
                     <button className='table__nav__list__button' onClick={prevPage} >  
