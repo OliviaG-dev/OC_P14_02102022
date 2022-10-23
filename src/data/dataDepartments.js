@@ -1,9 +1,9 @@
 
-const dataDepartements = [
+const dataDepartments = [
     {   
         id: 0,
         value: "",
-        label: "Select a departement..."
+        label: "Select a department..."
     },
     {   
         id: 1,
@@ -32,4 +32,4 @@ const dataDepartements = [
     }
 ]
 
-export default dataDepartements;
+export default dataDepartments;

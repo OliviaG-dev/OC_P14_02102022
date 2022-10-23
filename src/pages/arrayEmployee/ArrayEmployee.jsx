@@ -90,6 +90,8 @@ const ArrayEmployee = () => {
         <h1 className='table__title'>Current Employees</h1>
         <NavLink to='/' className="table__link">Return Home</NavLink>
         <div className='table__header'>
+
+            {/* select number entries */}
             <div className='table__header__entries'>
                 <span>Show</span>
                 <select className='table__header__select' onChange={handleChangeEmployeesPerTable}>
@@ -100,7 +102,8 @@ const ArrayEmployee = () => {
                 </select>
                 <span>entries</span>
             </div>
-    
+            
+            {/* searchbar */}
             <div className='table__header__search'>
                 <label htmlFor='table-search' >Search</label>
                 <input type='text' id='table-search' className='header__search__input' placeholder='Search...' onChange={(e) => setSearchData(e.target.value)} />
@@ -109,30 +112,30 @@ const ArrayEmployee = () => {
             </div>
         </div>
 
+        {/*table */}
         <table className='table__content'>
+        
             <thead className='table__content__container'>
-            
-                <tr className='table__content__tr'>
-                    {columns.map((column, idx) => (
-                        <th key={'colum-'+idx} className='table__content__label'>
-                            <button className='table__content__button'
-                                    onClick={() => changeStateColumn(column.data)}
-                            >
-                                {column.title}
-                                <div>
-                                    {column.state === '' && <FontAwesomeIcon icon={faBars} className='table__content__icon' /> }
-                                    {column.state === 'asc' && <FontAwesomeIcon icon={faArrowUp} className='table__content__icon' />}
-                                    {column.state === 'desc' && <FontAwesomeIcon icon={faArrowDown} className='table__content__icon' />}
-                                </div>
-                            </button>
-                        </th>
+                    <tr className='table__content__tr'>
+                        {columns.map((column, idx) => (
+                            <th key={'colum-'+idx} className='table__content__label'>
+                                <button className='table__content__button'
+                                        onClick={() => changeStateColumn(column.data)}
+                                >
+                                    {column.title}
+                                    <div>
+                                        {column.state === '' && <FontAwesomeIcon icon={faBars} className='table__content__icon' /> }
+                                        {column.state === 'asc' && <FontAwesomeIcon icon={faArrowUp} className='table__content__icon' />}
+                                        {column.state === 'desc' && <FontAwesomeIcon icon={faArrowDown} className='table__content__icon' />}
+                                    </div>
+                                </button>
+                            </th>
                     ))}
-                </tr>
-            
+                    </tr>
             </thead>
             <tbody className='table__content__body'>
                 {displayData().slice(indexStart, indexStart + employeesPerTable).map((row, idx) => (
-                    <tr key={'user-'+idx} classname=''>
+                    <tr key={'user-'+idx} className='table__content__tr'>
                         <td className='table__content__td'>{row.firstName}</td>
                         <td className='table__content__td'>{row.lastName}</td>
                         <td className='table__content__td'>{row.startDate}</td>
@@ -146,12 +149,16 @@ const ArrayEmployee = () => {
                 ))}
             </tbody>
         </table>
+
         <nav className='table__nav' aria-label='table navigation'>
+            {/*Show number employees*/}
             <span className='table__nav__text'>Showing
             <span >{Number(indexStart+1)} - {Number(indexStart + employeesPerTable) < displayData().length ? Number(indexStart + employeesPerTable) : displayData().length}</span>
             of
             <span >{displayData().length}</span>
             </span>
+
+            {/*Show number page*/}
             <ul className='table__nav__list'>
                 <li>
                     <button className='table__nav__list__button' onClick={prevPage} >  

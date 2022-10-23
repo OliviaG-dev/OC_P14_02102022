@@ -38,7 +38,7 @@
     justify-content: space-around;
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
     align-items: center;
 }
 
@@ -56,7 +56,7 @@
 .table__header__search {
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
     align-items: center;
     display: flex;
 
@@ -118,6 +118,12 @@
     flex-direction: column;
 }
 
+.table__content__tr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .table__content__td {
     width: 11rem;
     padding: 0;
@@ -126,6 +132,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+tr:nth-child(2n) {
+    background-color: #94ad1819;
 }
 
 /*******************************TABLE NAV**************************************/
@@ -140,7 +150,7 @@
 .table__nav__text {
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
     display: flex;
     width: 10rem;
     justify-content: space-between;
@@ -168,7 +178,7 @@
 }
 
 .table__nav__list__button:hover {
-    background-color: rgba(17, 16, 16, 0.171);
+    background-color: #94ad1819;
 }
 
 .table__nav__list__icon--right {
@@ -184,5 +194,32 @@
 .table__nav__list__text {
     font-size: 1.2rem;
     font-weight:600;
-    color: var(--main-color);
+    color: var(--tertio-color);
+}
+
+/***************************Responsive********************/
+
+@media only screen and (max-width : 1600px) {
+    /*****CONTENT HEADER*******/
+    .table_content_container {
+        width: 100%;
+    }
+
+    .table__content__button {
+        width: 7rem;
+        height: 5rem;
+        display: block;
+    }
+
+    .table__content__icon {
+        margin: 0;
+        margin-top: 0.5rem;
+    }
+
+    /*****CONTENT BODY*******/
+    
+    .table__content__td {
+        width: 7rem;
+        height: 5rem;
+    }
 }

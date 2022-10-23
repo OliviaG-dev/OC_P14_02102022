@@ -91,12 +91,12 @@
 }
 
 .from__button {
-    background: var(--main-color);
+    background: var(--tertio-color);
     border: 1px solid var(--tertio-color);
     border-radius: 0.37rem;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #F8f8f8;
     cursor: pointer;
     display: inline-block;
     font-size: 1rem;

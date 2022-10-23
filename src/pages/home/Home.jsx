@@ -1,7 +1,7 @@
 import './Home.css'
 import React, { useState } from 'react';
 import dataStates from '../../data/dataStates';
-import dataDepartements from '../../data/dataDepartements';
+import dataDepartments from '../../data/dataDepartments';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import { createEmployee } from '../../redux/features/employee';
@@ -19,6 +19,7 @@ const Home = () => {
         setIsShow(!isShow)
     }
     
+    //configure errors
     const validationSchema = Yup.object().shape({
         firstName: Yup.string()
             .min(4, 'Too small')
@@ -48,7 +49,7 @@ const Home = () => {
             .min(5, 'Must be exactly 5 digits')
             .max(5, 'Must be exactly 5 digits')
             .required('This field is required'),
-        departement: Yup.string()
+        department: Yup.string()
             .required('This field is required'),
     })
     
@@ -61,7 +62,7 @@ const Home = () => {
         city: "",
         state: "Select a state...",
         zipCode: "",
-        departement: "Select a departement...",
+        department: "Select a department...",
     }
 
 
@@ -84,7 +85,7 @@ const Home = () => {
                         city:"",
                         state:"",
                         zipCode:"",
-                        departement:"",
+                        department:"",
                     })
                     setIsShow(true)
                     }}
@@ -93,25 +94,25 @@ const Home = () => {
 
                     <div  className='form__div'>
                         <label htmlFor='firstName'>First Name</label>
-                        <Field name='firstName' type='text' />
+                        <Field id='firstName' name='firstName' type='text' />
                         <ErrorMessage name='firstName' component='span' className='form__error' />
                     </div>
 
                     <div  className='form__div'>
                         <label htmlFor='lastName'>Last Name</label>
-                        <Field name='lastName' type='text' />
+                        <Field id='lastName' name='lastName' type='text' />
                         <ErrorMessage name='lastName' component='span' className='form__error' />
                     </div>
 
                     <div  className='form__div'>
                         <label htmlFor='dateOfBirth'>Date of Birth</label>
-                        <Field name='dateOfBirth' type='date' />
+                        <Field id='dateOfBirth' name='dateOfBirth' type='date' />
                         <ErrorMessage name='dateOfBirth' component='span' className='form__error' />
                     </div>
 
                     <div  className='form__div'>
                         <label htmlFor='startDate'>Start Date</label>
-                        <Field name='startDate' type='date' />
+                        <Field id='startDate' name='startDate' type='date' />
                         <ErrorMessage name='startDate' component='span' className='form__error' />
                     </div>
                     
@@ -120,19 +121,19 @@ const Home = () => {
 
                         <div  className='form__div'>
                             <label htmlFor='street'>Street</label>
-                            <Field name='street' type='text' />
+                            <Field id='street' name='street' type='text' />
                             <ErrorMessage name='street' component='span' className='form__error' />
                         </div>
 
                         <div  className='form__div'>
                             <label htmlFor='city'>City</label>
-                            <Field name='city' type='text' />
+                            <Field id='city' name='city' type='text' />
                             <ErrorMessage name='city' component='span' className='form__error' />
                         </div>
 
                         <div  className='form__div'>
                             <label htmlFor='state'>State</label>
-                            <Field name='state' as='select' className='from__select'>                              
+                            <Field id='state' name='state' as='select' className='from__select'>                              
                                 {dataStates.map((option, index) => (
                                     <option value={option.abbreviation} key={index}>{option.name}</option>
                                 ))}
@@ -142,7 +143,7 @@ const Home = () => {
 
                         <div  className='form__div'>
                             <label htmlFor='zipCode'>Zip Code</label>
-                            <Field name='zipCode' type='number' />
+                            <Field id='zipCode' name='zipCode' type='number' />
                             <ErrorMessage name='zipCode' component='span' className='form__error' />
                         </div>
 
@@ -150,8 +151,8 @@ const Home = () => {
 
                     <div  className='form__div'>
                         <label htmlFor='department'>Department</label>
-                        <Field name='department' as='select' className='from__select'>
-                            {dataDepartements.map((option) => (
+                        <Field id='department' name='department' as='select' className='from__select'>
+                            {dataDepartments.map((option) => (
                                 <option value={option.value} key={option.id}>{option.label}</option>
                             ))}
                         </Field>
